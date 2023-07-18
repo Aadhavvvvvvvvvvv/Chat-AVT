@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat AVT - AI Website</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #007bff;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        /* Styling for the homepage */
+        #home {
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        #home h1 {
+            font-size: 48px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        #home h2 {
+            font-size: 36px;
+            color: #007bff;
+        }
+
+        #home p {
+            font-size: 20px;
+            color: #444;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 30px;
+            margin-top: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Styling for other sections */
+        section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #007bff;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        section p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #444;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        /* Styling for the footer */
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+
+        /* Add animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Cube transition styles */
+        .cube-container {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            transition: transform 1s ease;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .cube-front {
+            transform: translateZ(25px);
+        }
+
+        .cube-back {
+            transform: rotateY(-180deg) translateZ(25px);
+        }
+
+        /* Styling for the pop-up */
+        .popup-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            display: none;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .close-button {
+            cursor: pointer;
+            color: #999;
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About AI</a></li>
+            <li><a href="#services">AI Services</a></li>
+            <li><a href="#use-cases">Use Cases</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Cube Transition Container -->
+    <div class="cube-container" id="cube-container">
+        <!-- Front face of the cube (current page content) -->
+        <div class="cube-face cube-front">
+            <!-- Homepage -->
+            <section id="home">
+                <h1>Welcome to our <span style="color: #007bff;">AI Website</span></h1>
+                <h2>Ingen: The Future of AI</h2>
+                <p>Discover the power of artificial intelligence in various fields.</p>
+                <a href="#services" class="cta-button">Explore AI Services</a>
+            </section>
+
+            <!-- About AI Section -->
+            <section id="about">
+                <h2>About AI</h2>
+                <p>
+                    Artificial Intelligence (AI) is a field of computer science that aims to create machines that can mimic human
+                    intelligence. AI encompasses various techniques, including machine learning, natural language processing, and computer
+                    vision. It has applications in diverse industries, including healthcare, finance, and entertainment.
+                </p>
+                <a href="aboutAI.html" class="cta-button" style="background-color: #00cc99;">Learn More</a>
+
+            </section>
+
+            <!-- AI Services Section -->
+            <section id="services">
+                <h2>AI Services</h2>
+                <p>
+                    Our AI Services include state-of-the-art chatbots, intelligent virtual assistants, and cutting-edge machine learning
+                    solutions. We cater to various industries, helping businesses streamline their operations and enhance customer
+                    experiences.
+                </p>
+                <a href="#" class="cta-button" style="background-color: #ff6b6b;">View Services</a>
+            </section>
+
+            <!-- Use Cases Section -->
+            <section id="use-cases">
+                <h2>Use Cases</h2>
+                <p>
+                    Explore real-life examples of how AI has transformed industries. From optimizing supply chains to diagnosing diseases,
+                    AI has revolutionized the way we work and live.
+                </p>
+                <a href="#" class="cta-button" style="background-color: #ffcc66;">View Use Cases</a>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>
+                    Have a question or need assistance? Get in touch with our team for personalized support and expert guidance.
+                </p>
+                <a href="#" class="cta-button" style="background-color: #ff9900;">Get in Touch</a>
+            </section>
+        </div>
+
+        <!-- Back face of the cube (about AI content) -->
+        <div class="cube-face cube-back">
+            <!-- About AI Section - Load content from aboutAI.html -->
+            <iframe src="aboutAI.html" frameborder="0" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+
+    <!-- We are hiring pop-up -->
+    <div class="popup-container" id="popup-container">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+            <h2>We are Hiring!</h2>
+            <p>We are looking for talented individuals to join our team. Apply now and be part of the AI revolution.</p>
+            <button class="cta-button" onclick="closePopup()">Apply Now</button>
+        </div>
+    </div>
+
+    <footer>
+        <p style="color: #fff;">&copy; 2023 Chat AVT. All rights reserved.</p>
+    </footer>
+
+    <!-- Add your JavaScript code here -->
+    <script>
+        const cubeContainer = document.getElementById('cube-container');
+        let isFlipped = false;
+
+        // Function to flip the cube and show the next face (aboutAI.html content)
+        function flipCube() {
+            if (isFlipped) {
+                cubeContainer.style.transform = 'rotateY(0)';
+            } else {
+                cubeContainer.style.transform = 'rotateY(-180deg)';
+            }
+            isFlipped = !isFlipped;
+        }
+
+        // Add event listener to the "About AI" link in the navigation bar
+        const aboutAILink = document.querySelector('a[href="aboutAI.html"]');
+        aboutAILink.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            flipCube(); // Flip the cube to show aboutAI.html content
+        });
+
+        // Function to open the "We are hiring" pop-up
+        function openPopup() {
+            const popupContainer = document.getElementById('popup-container');
+            popupContainer.style.display = 'flex';
+        }
+
+        // Function to close the pop-up
+        function closePopup() {
+            const popupContainer = document.getElementById('popup-container');
+            popupContainer.style.display = 'none';
+        }
+
+        // Add event listener to the "We are hiring" button
+        const hiringButton = document.getElementById('openPopupButton');
+        hiringButton.addEventListener('click', openPopup);
+    </script>
+</body>
+
+</html>
